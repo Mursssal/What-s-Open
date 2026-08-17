@@ -1,0 +1,62 @@
+:root {
+  /* --- Color tokens --- */
+  --bg: #12151c;
+  --surface: #1b202b;
+  --surface-raised: #232938;
+  --border: #2c3344;
+  --text: #eef0f4;
+  --text-muted: #8a92a6;
+
+  --open: #3ddc84;
+  --open-glow: rgba(61, 220, 132, 0.45);
+  --closed: #ff5d6c;
+  --closed-glow: rgba(255, 93, 108, 0.35);
+
+  --accent: #ffb020; /* used sparingly: category active state */
+
+  /* --- Type --- */
+  --font-display: "Oswald", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--open-glow);
+}
+
+/* visible focus ring everywhere, keyboard accessibility */
+:focus-visible {
+  outline: 2px solid var(--open);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
